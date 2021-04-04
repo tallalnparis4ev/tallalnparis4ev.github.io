@@ -65,13 +65,13 @@ $(function() {
 <div class="title">/Users/tallal/Documents/proto/cppersist/cppersist/local.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LOCAL_H_FILE</span></div>
+<a href="local_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LOCAL_H_FILE</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define LOCAL_H_FILE</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;crypto/sha256.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;memoization/persistent/memoizer.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="persistent_2memoizer_8hpp.html">memoization/persistent/memoizer.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>cpst {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecpst.html">cpst</a> {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;PersistentMemoized&lt;T, Ret, Args...&gt; <a class="code" href="group___persist_local.html#gacb16a54d2de8f8eb0abe791a3b40702b">getLocalMemoizedObj</a>(</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">string</span> (*key)(Args...), string (*pickle)(Ret), Ret (*unpickle)(<span class="keywordtype">string</span>),</div>
@@ -84,18 +84,22 @@ $(function() {
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;PersistentMemoized&lt;T, Ret, Args...&gt; <a class="code" href="group___persist_local.html#gacb16a54d2de8f8eb0abe791a3b40702b">getLocalMemoizedObj</a>(</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    MemCacheType primaryCache, <span class="keywordtype">string</span> (*key)(Args...), string (*pickle)(Ret),</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="namespacecppersist.html#a8342a715ecef89a7ba68ba7a133a4e7b">MemCacheType</a> primaryCache, <span class="keywordtype">string</span> (*key)(Args...), string (*pickle)(Ret),</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    Ret (*unpickle)(<span class="keywordtype">string</span>), <span class="keywordtype">string</span> (*hash)(<span class="keywordtype">string</span>) = sha256);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;PersistentMemoized&lt;T, Ret, Args...&gt; <a class="code" href="group___persist_local.html#gacb16a54d2de8f8eb0abe791a3b40702b">getLocalMemoizedObj</a>(</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    MemCacheType primaryCache, <span class="keywordtype">string</span> (*key)(Args...), string (*pickle)(Ret),</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="namespacecppersist.html#a8342a715ecef89a7ba68ba7a133a4e7b">MemCacheType</a> primaryCache, <span class="keywordtype">string</span> (*key)(Args...), string (*pickle)(Ret),</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    Ret (*unpickle)(<span class="keywordtype">string</span>), <span class="keywordtype">string</span> funcName, <span class="keywordtype">string</span> (*hash)(<span class="keywordtype">string</span>) = sha256);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}  <span class="comment">// namespace cpst</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#include &quot;local.cpp&quot;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="local_8cpp.html">local.cpp</a>&quot;</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="agroup___persist_local_html_gacb16a54d2de8f8eb0abe791a3b40702b"><div class="ttname"><a href="group___persist_local.html#gacb16a54d2de8f8eb0abe791a3b40702b">cpst::getLocalMemoizedObj</a></div><div class="ttdeci">PersistentMemoized&lt; T, Ret, Args... &gt; getLocalMemoizedObj(string(*key)(Args...), string(*pickle)(Ret), Ret(*unpickle)(string), string(*hash)(string))</div><div class="ttdef"><b>Definition:</b> <a href="local_8cpp_source.html#l00013">local.cpp:13</a></div></div>
+<div class="ttc" id="alocal_8cpp_html"><div class="ttname"><a href="local_8cpp.html">local.cpp</a></div></div>
+<div class="ttc" id="anamespacecppersist_html_a8342a715ecef89a7ba68ba7a133a4e7b"><div class="ttname"><a href="namespacecppersist.html#a8342a715ecef89a7ba68ba7a133a4e7b">cppersist::MemCacheType</a></div><div class="ttdeci">MemCacheType</div><div class="ttdef"><b>Definition:</b> <a href="memcachetypes_8hpp_source.html#l00010">memcachetypes.hpp:10</a></div></div>
+<div class="ttc" id="anamespacecpst_html"><div class="ttname"><a href="namespacecpst.html">cpst</a></div><div class="ttdef"><b>Definition:</b> <a href="lrucache_8cpp_source.html#l00010">lrucache.cpp:10</a></div></div>
+<div class="ttc" id="apersistent_2memoizer_8hpp_html"><div class="ttname"><a href="persistent_2memoizer_8hpp.html">memoizer.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['_7ecache_60',['~Cache',['../classcpst_1_1_cache.html#a00aaa8f001ef8e233a3e7fda583f1cca',1,'cpst::Cache']]],
-  ['_7epersistentmemoized_61',['~PersistentMemoized',['../classcpst_1_1_persistent_memoized.html#a62dccf85240e4dada3d1755aa06b12a3',1,'cpst::PersistentMemoized']]]
+  ['log_124',['log',['../namespacecpst.html#ac0f596011ecfd9e5c6e79aafa1fbe3a9',1,'cpst']]],
+  ['logone_125',['logOne',['../namespacecpst.html#a8d94e8647d1c08c5b7d8bafcb21ac573',1,'cpst']]],
+  ['lrucache_126',['LRUCache',['../classcpst_1_1_l_r_u_cache.html#a64b72d8e9098e1e356a7cd9682ba0de0',1,'cpst::LRUCache']]]
 ];

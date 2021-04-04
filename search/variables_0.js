@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['key_62',['key',['../classcpst_1_1_cache.html#a670f91dc553e82bd843f46347e757da6',1,'cpst::Cache']]]
+  ['cachesize_144',['cacheSize',['../classcpst_1_1_mem_cache.html#ae73d28cc906a3eb181c6b686dddfe90d',1,'cpst::MemCache']]]
 ];

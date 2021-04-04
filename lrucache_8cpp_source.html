@@ -69,7 +69,7 @@ $(function() {
 <div class="title">lrucache.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<a href="lrucache_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;optional&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
@@ -78,15 +78,15 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using</span> std::nullopt;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using</span> std::optional;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using</span> std::string;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>cpst {</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespacecpst.html">   10</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecpst.html">cpst</a> {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;LRUCache&lt;Ret, Args...&gt;* LRUCache&lt;Ret, Args...&gt;::clone() {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">new</span> LRUCache&lt;Ret, Args...&gt;(this-&gt;cacheSize, this-&gt;key, this-&gt;pickle,</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classcpst_1_1_l_r_u_cache.html#a1e796747ecf46d33fe7784179897fe73">   12</a></span>&#160;<a class="code" href="classcpst_1_1_l_r_u_cache.html">LRUCache</a>&lt;Ret, Args...&gt;* <a class="code" href="classcpst_1_1_l_r_u_cache.html#a1e796747ecf46d33fe7784179897fe73">LRUCache&lt;Ret, Args...&gt;::clone</a>() {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classcpst_1_1_l_r_u_cache.html">LRUCache</a>&lt;Ret, Args...&gt;(this-&gt;cacheSize, this-&gt;key, this-&gt;pickle,</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                    this-&gt;unpickle);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;std::optional&lt;string&gt; LRUCache&lt;Ret, Args...&gt;::getFromCache(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; key) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;std::optional&lt;string&gt; <a class="code" href="classcpst_1_1_l_r_u_cache.html">LRUCache&lt;Ret, Args...&gt;::getFromCache</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; key) {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  std::unordered_map&lt;string, string&gt;::iterator iter = cache.find(key);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">if</span> (iter != cache.end())                  <span class="comment">// found it in the map</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> optional&lt;string&gt;{iter-&gt;second};  <span class="comment">// return the value</span></div>
@@ -113,7 +113,7 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classcpst_1_1_l_r_u_cache.html">LRUCache&lt;Ret, Args...&gt;::put</a>(<span class="keyword">const</span> Args&amp;... args, <span class="keyword">const</span> Ret&amp; value) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classcpst_1_1_l_r_u_cache.html#a221ad6de2eb9a0cdf9518d831889b60b">   45</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classcpst_1_1_l_r_u_cache.html#a221ad6de2eb9a0cdf9518d831889b60b">LRUCache&lt;Ret, Args...&gt;::put</a>(<span class="keyword">const</span> Args&amp;... args, <span class="keyword">const</span> Ret&amp; value) {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// Create a string key from the arguments</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">string</span> key = this-&gt;key(args...);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
@@ -134,7 +134,10 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}  <span class="comment">// namespace cpst</span></div>
 <div class="ttc" id="aclasscpst_1_1_l_r_u_cache_html"><div class="ttname"><a href="classcpst_1_1_l_r_u_cache.html">cpst::LRUCache</a></div><div class="ttdef"><b>Definition:</b> <a href="lrucache_8hpp_source.html#l00020">lrucache.hpp:20</a></div></div>
+<div class="ttc" id="aclasscpst_1_1_l_r_u_cache_html_a1e796747ecf46d33fe7784179897fe73"><div class="ttname"><a href="classcpst_1_1_l_r_u_cache.html#a1e796747ecf46d33fe7784179897fe73">cpst::LRUCache::clone</a></div><div class="ttdeci">LRUCache * clone()</div><div class="ttdef"><b>Definition:</b> <a href="lrucache_8cpp_source.html#l00012">lrucache.cpp:12</a></div></div>
+<div class="ttc" id="aclasscpst_1_1_l_r_u_cache_html_a221ad6de2eb9a0cdf9518d831889b60b"><div class="ttname"><a href="classcpst_1_1_l_r_u_cache.html#a221ad6de2eb9a0cdf9518d831889b60b">cpst::LRUCache::put</a></div><div class="ttdeci">void put(const Args &amp;... args, const Ret &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="lrucache_8cpp_source.html#l00045">lrucache.cpp:45</a></div></div>
 <div class="ttc" id="aclasscpst_1_1_l_r_u_cache_html_afb0bb2d6d02d3105faf64bcab0b01a98"><div class="ttname"><a href="classcpst_1_1_l_r_u_cache.html#afb0bb2d6d02d3105faf64bcab0b01a98">cpst::LRUCache::get</a></div><div class="ttdeci">std::optional&lt; Ret &gt; get(const Args &amp;... args)</div><div class="ttdef"><b>Definition:</b> <a href="lrucache_8cpp_source.html#l00026">lrucache.cpp:26</a></div></div>
+<div class="ttc" id="anamespacecpst_html"><div class="ttname"><a href="namespacecpst.html">cpst</a></div><div class="ttdef"><b>Definition:</b> <a href="lrucache_8cpp_source.html#l00010">lrucache.cpp:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

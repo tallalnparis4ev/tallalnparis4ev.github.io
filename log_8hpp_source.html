@@ -69,40 +69,45 @@ $(function() {
 <div class="title">log.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LOG_H_FILE</span></div>
+<a href="log_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef LOG_H_FILE</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define LOG_H_FILE</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>cpst {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">bool</span> shouldLog = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecpst.html">cpst</a> {</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespacecpst.html#a0c3e3751f3a5bbdbcb1b64ae6750ab45">    7</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="namespacecpst.html#a0c3e3751f3a5bbdbcb1b64ae6750ab45">shouldLog</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keywordtype">void</span> print(T value) {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">if</span> (!shouldLog) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="namespacecpst.html#aa26c04a3579aaa0b2820c43d99409cf9">    9</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecpst.html#a4fcc0e679ed419e4eb1eb59143f23f35">print</a>(T value) {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacecpst.html#a0c3e3751f3a5bbdbcb1b64ae6750ab45">shouldLog</a>) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  cout &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> First, <span class="keyword">typename</span>... Rest&gt;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> print(First firstValue, Rest... rest) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">if</span> (!shouldLog) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  print(firstValue);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  print(rest...);</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespacecpst.html#a4fcc0e679ed419e4eb1eb59143f23f35">   15</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecpst.html#a4fcc0e679ed419e4eb1eb59143f23f35">print</a>(First firstValue, Rest... rest) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacecpst.html#a0c3e3751f3a5bbdbcb1b64ae6750ab45">shouldLog</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="namespacecpst.html#a4fcc0e679ed419e4eb1eb59143f23f35">print</a>(firstValue);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <a class="code" href="namespacecpst.html#a4fcc0e679ed419e4eb1eb59143f23f35">print</a>(rest...);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> First, <span class="keyword">typename</span>... Rest&gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> log(First firstValue, Rest... rest) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">if</span> (!shouldLog) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  print(firstValue, rest...);</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespacecpst.html#ac0f596011ecfd9e5c6e79aafa1fbe3a9">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecpst.html#ac0f596011ecfd9e5c6e79aafa1fbe3a9">log</a>(First firstValue, Rest... rest) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacecpst.html#a0c3e3751f3a5bbdbcb1b64ae6750ab45">shouldLog</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="namespacecpst.html#a4fcc0e679ed419e4eb1eb59143f23f35">print</a>(firstValue, rest...);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  cout &lt;&lt; endl;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Single&gt;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> logOne(Single singleValue) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">if</span> (!shouldLog) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespacecpst.html#a8d94e8647d1c08c5b7d8bafcb21ac573">   29</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespacecpst.html#a8d94e8647d1c08c5b7d8bafcb21ac573">logOne</a>(Single singleValue) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="namespacecpst.html#a0c3e3751f3a5bbdbcb1b64ae6750ab45">shouldLog</a>) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  cout &lt;&lt; singleValue &lt;&lt; endl;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}  <span class="comment">// namespace cpst</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="anamespacecpst_html"><div class="ttname"><a href="namespacecpst.html">cpst</a></div><div class="ttdef"><b>Definition:</b> <a href="lrucache_8cpp_source.html#l00010">lrucache.cpp:10</a></div></div>
+<div class="ttc" id="anamespacecpst_html_a0c3e3751f3a5bbdbcb1b64ae6750ab45"><div class="ttname"><a href="namespacecpst.html#a0c3e3751f3a5bbdbcb1b64ae6750ab45">cpst::shouldLog</a></div><div class="ttdeci">bool shouldLog</div><div class="ttdef"><b>Definition:</b> <a href="log_8hpp_source.html#l00007">log.hpp:7</a></div></div>
+<div class="ttc" id="anamespacecpst_html_a4fcc0e679ed419e4eb1eb59143f23f35"><div class="ttname"><a href="namespacecpst.html#a4fcc0e679ed419e4eb1eb59143f23f35">cpst::print</a></div><div class="ttdeci">void print(First firstValue, Rest... rest)</div><div class="ttdef"><b>Definition:</b> <a href="log_8hpp_source.html#l00015">log.hpp:15</a></div></div>
+<div class="ttc" id="anamespacecpst_html_a8d94e8647d1c08c5b7d8bafcb21ac573"><div class="ttname"><a href="namespacecpst.html#a8d94e8647d1c08c5b7d8bafcb21ac573">cpst::logOne</a></div><div class="ttdeci">void logOne(Single singleValue)</div><div class="ttdef"><b>Definition:</b> <a href="log_8hpp_source.html#l00029">log.hpp:29</a></div></div>
+<div class="ttc" id="anamespacecpst_html_ac0f596011ecfd9e5c6e79aafa1fbe3a9"><div class="ttname"><a href="namespacecpst.html#ac0f596011ecfd9e5c6e79aafa1fbe3a9">cpst::log</a></div><div class="ttdeci">void log(First firstValue, Rest... rest)</div><div class="ttdef"><b>Definition:</b> <a href="log_8hpp_source.html#l00022">log.hpp:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
