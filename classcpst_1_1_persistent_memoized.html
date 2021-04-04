@@ -84,7 +84,7 @@ Inheritance diagram for cpst::PersistentMemoized&lt; T, Ret, Args &gt;:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af2218b0196056173cfba94b6b3fd20fd"><td class="memItemLeft" align="right" valign="top"><a id="af2218b0196056173cfba94b6b3fd20fd"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>PersistentMemoized</b> (<a class="el" href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6">MemCacheType</a> primaryCache, <a class="el" href="classcpst_1_1_cache.html">Cache</a>&lt; Ret, Args... &gt; *secondaryCache)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>PersistentMemoized</b> (MemCacheType primaryCache, <a class="el" href="classcpst_1_1_cache.html">Cache</a>&lt; Ret, Args... &gt; *secondaryCache)</td></tr>
 <tr class="separator:af2218b0196056173cfba94b6b3fd20fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39ccc452077f2a7d27ff28c33de702ba"><td class="memItemLeft" align="right" valign="top"><a id="a39ccc452077f2a7d27ff28c33de702ba"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>PersistentMemoized</b> (<a class="el" href="classcpst_1_1_cache.html">Cache</a>&lt; Ret, Args... &gt; *primaryCache)</td></tr>
@@ -102,9 +102,9 @@ Ret&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (Args c
 <tr class="separator:ada23f7e90a2f4d83f306a7d2247f343f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af53e8d6eb5593ae5e587342a8688a673"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcpst_1_1_persistent_memoized.html">PersistentMemoized</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_persistent_memoized.html#af53e8d6eb5593ae5e587342a8688a673">operator=</a> (const <a class="el" href="classcpst_1_1_persistent_memoized.html">PersistentMemoized</a> &amp;lvalue)</td></tr>
 <tr class="separator:af53e8d6eb5593ae5e587342a8688a673"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93d5cf34d9e187af16694a421c28a5f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_persistent_memoized.html#a93d5cf34d9e187af16694a421c28a5f1">setMemoryCache</a> (<a class="el" href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6">MemCacheType</a>)</td></tr>
+<tr class="memitem:a93d5cf34d9e187af16694a421c28a5f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_persistent_memoized.html#a93d5cf34d9e187af16694a421c28a5f1">setMemoryCache</a> (MemCacheType)</td></tr>
 <tr class="separator:a93d5cf34d9e187af16694a421c28a5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abba2010bfc75d476653c3b42a39d5c28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_persistent_memoized.html#abba2010bfc75d476653c3b42a39d5c28">setMemoryCache</a> (<a class="el" href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6">MemCacheType</a>, int)</td></tr>
+<tr class="memitem:abba2010bfc75d476653c3b42a39d5c28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_persistent_memoized.html#abba2010bfc75d476653c3b42a39d5c28">setMemoryCache</a> (MemCacheType, int)</td></tr>
 <tr class="separator:abba2010bfc75d476653c3b42a39d5c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77984479ef3af14a172c943805aa3f74"><td class="memItemLeft" align="right" valign="top"><a id="a77984479ef3af14a172c943805aa3f74"></a>
 virtual Ret&#160;</td><td class="memItemRight" valign="bottom"><b>solve</b> (Args... args)</td></tr>
@@ -233,7 +233,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classcpst_1_1_persistent_memoized.html">cpst::PersistentMemoized</a>&lt; T, Ret, Args &gt;::setMemoryCache </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6">MemCacheType</a>&#160;</td>
+          <td class="paramtype">MemCacheType&#160;</td>
           <td class="paramname"><em>type</em></td><td>)</td>
           <td></td>
         </tr>
@@ -256,7 +256,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classcpst_1_1_persistent_memoized.html">cpst::PersistentMemoized</a>&lt; T, Ret, Args &gt;::setMemoryCache </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6">MemCacheType</a>&#160;</td>
+          <td class="paramtype">MemCacheType&#160;</td>
           <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>

@@ -81,18 +81,18 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;Memoized&lt;T, Ret, Args...&gt; getMemoizedObj(</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::string (*key)(Args...), std::string (*pickle)(Ret),</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Ret (*unpickle)(std::string), <a class="code" href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6">MemCacheType</a> type = <a class="code" href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6a820ead78f0fa32544c7ba38fe7ff53d9">MemCacheType::REGULAR</a>,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Ret (*unpickle)(std::string), MemCacheType type = MemCacheType::REGULAR,</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> size = 1000) {</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  static_assert(std::is_base_of&lt;Memoizable&lt;Ret, Args...&gt;, T&gt;::value,</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="stringliteral">&quot;Must Memoize a class that inherits from Memoizable&quot;</span>);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordflow">switch</span> (type) {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6abc21e6484530fc9d0313cb816b733396">MemCacheType::ONE</a>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">case</span> MemCacheType::ONE:</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="keywordflow">return</span> Memoized&lt;T, Ret, Args...&gt;(</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;          <span class="keyword">new</span> OneCache&lt;Ret, Args...&gt;(key, pickle, unpickle));</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6a820ead78f0fa32544c7ba38fe7ff53d9">MemCacheType::REGULAR</a>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">case</span> MemCacheType::REGULAR:</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <span class="keywordflow">return</span> Memoized&lt;T, Ret, Args...&gt;(</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;          <span class="keyword">new</span> RegCache&lt;Ret, Args...&gt;(size, key, pickle, unpickle));</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6a875ecb34f6d21d13d4b9fd4980a8b5af">MemCacheType::LRU</a>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">case</span> MemCacheType::LRU:</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keywordflow">return</span> Memoized&lt;T, Ret, Args...&gt;(</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;          <span class="keyword">new</span> LRUCache&lt;Ret, Args...&gt;(size, key, pickle, unpickle));</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  }</div>
@@ -105,15 +105,11 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                         <span class="keywordtype">int</span> size) {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  logOne(<span class="stringliteral">&quot;aux&quot;</span>);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">return</span> getMemoizedObj&lt;T, Ret, Args...&gt;(key, pickle, unpickle,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                         <a class="code" href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6a820ead78f0fa32544c7ba38fe7ff53d9">MemCacheType::REGULAR</a>, size);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                         MemCacheType::REGULAR, size);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}  <span class="comment">// namespace cpst</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="amemcachetypes_8hpp_html"><div class="ttname"><a href="memcachetypes_8hpp.html">memcachetypes.hpp</a></div></div>
-<div class="ttc" id="amemcachetypes_8hpp_html_af59f526e1171e09a5769c8c12f11f2f6"><div class="ttname"><a href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6">MemCacheType</a></div><div class="ttdeci">MemCacheType</div><div class="ttdef"><b>Definition:</b> <a href="memcachetypes_8hpp_source.html#l00007">memcachetypes.hpp:7</a></div></div>
-<div class="ttc" id="amemcachetypes_8hpp_html_af59f526e1171e09a5769c8c12f11f2f6a820ead78f0fa32544c7ba38fe7ff53d9"><div class="ttname"><a href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6a820ead78f0fa32544c7ba38fe7ff53d9">MemCacheType::REGULAR</a></div><div class="ttdeci">@ REGULAR</div></div>
-<div class="ttc" id="amemcachetypes_8hpp_html_af59f526e1171e09a5769c8c12f11f2f6a875ecb34f6d21d13d4b9fd4980a8b5af"><div class="ttname"><a href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6a875ecb34f6d21d13d4b9fd4980a8b5af">MemCacheType::LRU</a></div><div class="ttdeci">@ LRU</div></div>
-<div class="ttc" id="amemcachetypes_8hpp_html_af59f526e1171e09a5769c8c12f11f2f6abc21e6484530fc9d0313cb816b733396"><div class="ttname"><a href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6abc21e6484530fc9d0313cb816b733396">MemCacheType::ONE</a></div><div class="ttdeci">@ ONE</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
