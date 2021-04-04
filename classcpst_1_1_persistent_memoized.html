@@ -73,7 +73,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="persister_8hpp_source.html">persister.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="persistent_2memoizer_8hpp_source.html">memoizer.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for cpst::PersistentMemoized&lt; T, Ret, Args &gt;:</div>
 <div class="dyncontent">
@@ -106,14 +106,17 @@ Ret&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (Args c
 <tr class="separator:a93d5cf34d9e187af16694a421c28a5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abba2010bfc75d476653c3b42a39d5c28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_persistent_memoized.html#abba2010bfc75d476653c3b42a39d5c28">setMemoryCache</a> (<a class="el" href="memcachetypes_8hpp.html#af59f526e1171e09a5769c8c12f11f2f6">MemCacheType</a>, int)</td></tr>
 <tr class="separator:abba2010bfc75d476653c3b42a39d5c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77984479ef3af14a172c943805aa3f74"><td class="memItemLeft" align="right" valign="top"><a id="a77984479ef3af14a172c943805aa3f74"></a>
+virtual Ret&#160;</td><td class="memItemRight" valign="bottom"><b>solve</b> (Args... args)</td></tr>
+<tr class="separator:a77984479ef3af14a172c943805aa3f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename T, typename Ret, typename ... Args&gt;<br />
+<div class="textblock"><h3>template&lt;typename T, typename Ret, typename... Args&gt;<br />
 class cpst::PersistentMemoized&lt; T, Ret, Args &gt;</h3>
 
 <p>An object of this class will have its function call operator () to perform some computation, and this function has persistent memoization applied. </p>
 
-<p class="definition">Definition at line <a class="el" href="persister_8hpp_source.html#l00017">17</a> of file <a class="el" href="persister_8hpp_source.html">persister.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="persistent_2memoizer_8hpp_source.html#l00018">18</a> of file <a class="el" href="persistent_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad2edb791c393d9092813fa93280fb1cc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad2edb791c393d9092813fa93280fb1cc">&#9670;&nbsp;</a></span>PersistentMemoized() <span class="overload">[1/2]</span></h2>
@@ -121,7 +124,7 @@ class cpst::PersistentMemoized&lt; T, Ret, Args &gt;</h3>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename Ret , typename ... Args&gt; </div>
+template&lt;typename T , typename Ret , typename... Args&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classcpst_1_1_persistent_memoized.html">cpst::PersistentMemoized</a>&lt; T, Ret, Args &gt;::<a class="el" href="classcpst_1_1_persistent_memoized.html">PersistentMemoized</a> </td>
@@ -142,7 +145,7 @@ template&lt;typename T , typename Ret , typename ... Args&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename Ret , typename ... Args&gt; </div>
+template&lt;typename T , typename Ret , typename... Args&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classcpst_1_1_persistent_memoized.html">cpst::PersistentMemoized</a>&lt; T, Ret, Args &gt;::<a class="el" href="classcpst_1_1_persistent_memoized.html">PersistentMemoized</a> </td>
@@ -163,7 +166,7 @@ template&lt;typename T , typename Ret , typename ... Args&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename Ret , typename ... Args&gt; </div>
+template&lt;typename T , typename Ret , typename... Args&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classcpst_1_1_persistent_memoized.html">cpst::PersistentMemoized</a>&lt; T, Ret, Args &gt;::~<a class="el" href="classcpst_1_1_persistent_memoized.html">PersistentMemoized</a></td>
@@ -172,7 +175,7 @@ template&lt;typename T , typename Ret , typename ... Args&gt; </div>
 </div><div class="memdoc">
 <p>Destructor </p>
 
-<p class="definition">Definition at line <a class="el" href="persister_8cpp_source.html#l00054">54</a> of file <a class="el" href="persister_8cpp_source.html">persister.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00063">63</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
 
 </div>
 </div>
@@ -183,7 +186,7 @@ template&lt;typename T , typename Ret , typename ... Args&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename Ret , typename ... Args&gt; </div>
+template&lt;typename T , typename Ret , typename... Args&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classcpst_1_1_persistent_memoized.html">PersistentMemoized</a>&amp; <a class="el" href="classcpst_1_1_persistent_memoized.html">cpst::PersistentMemoized</a>&lt; T, Ret, Args &gt;::operator= </td>
@@ -204,7 +207,7 @@ template&lt;typename T , typename Ret , typename ... Args&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename Ret , typename ... Args&gt; </div>
+template&lt;typename T , typename Ret , typename... Args&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classcpst_1_1_persistent_memoized.html">PersistentMemoized</a>&amp; <a class="el" href="classcpst_1_1_persistent_memoized.html">cpst::PersistentMemoized</a>&lt; T, Ret, Args &gt;::operator= </td>
@@ -238,7 +241,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
 </div><div class="memdoc">
 <p>A method to change/assign a memory cache </p>
 
-<p class="definition">Definition at line <a class="el" href="persister_8cpp_source.html#l00022">22</a> of file <a class="el" href="persister_8cpp_source.html">persister.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00022">22</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
 
 </div>
 </div>
@@ -269,15 +272,15 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>A method to change/assign a memory cache, followed by the size of the cache. The size is only applicable if the MemCacheType is LRU_CACHE. The size will determine the maximum number of entries in the LRU_CACHE. </p>
+<p>A method to change/assign a memory cache, followed by the size of the cache. The size is only applicable if the MemCacheType is LRU or REGULAR. The size will determine the maximum number of entries in the LRU or REGULAR. </p>
 
-<p class="definition">Definition at line <a class="el" href="persister_8cpp_source.html#l00027">27</a> of file <a class="el" href="persister_8cpp_source.html">persister.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00027">27</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/tallal/Documents/sh/cppersist/cppersist/memoization/<a class="el" href="persister_8hpp_source.html">persister.hpp</a></li>
-<li>/Users/tallal/Documents/sh/cppersist/cppersist/memoization/<a class="el" href="persister_8cpp_source.html">persister.cpp</a></li>
+<li>/Users/tallal/Documents/proto/cppersist/cppersist/memoization/persistent/<a class="el" href="persistent_2memoizer_8hpp_source.html">memoizer.hpp</a></li>
+<li>/Users/tallal/Documents/proto/cppersist/cppersist/memoization/persistent/<a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

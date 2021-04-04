@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cppersist: cpst::PersistentMemoizable&lt; Ret, Args &gt; Class Template Reference</title>
+<title>cppersist: cpst::Memoizable&lt; Ret, Args &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,35 +61,35 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>cpst</b></li><li class="navelem"><a class="el" href="classcpst_1_1_persistent_memoizable.html">PersistentMemoizable</a></li>  </ul>
+<li class="navelem"><b>cpst</b></li><li class="navelem"><a class="el" href="classcpst_1_1_memoizable.html">Memoizable</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classcpst_1_1_persistent_memoizable-members.html">List of all members</a>  </div>
+<a href="classcpst_1_1_memoizable-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">cpst::PersistentMemoizable&lt; Ret, Args &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">cpst::Memoizable&lt; Ret, Args &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="persister_8hpp_source.html">persister.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="memoizable_8hpp_source.html">memoizable.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a65a1f63c8e975443f6762b296e6d0798"><td class="memItemLeft" align="right" valign="top">virtual Ret&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_persistent_memoizable.html#a65a1f63c8e975443f6762b296e6d0798">solve</a> (Args... args)=0</td></tr>
-<tr class="separator:a65a1f63c8e975443f6762b296e6d0798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9cae5127b9013e7fb68dc2d6441ac23"><td class="memItemLeft" align="right" valign="top">virtual Ret&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_memoizable.html#af9cae5127b9013e7fb68dc2d6441ac23">solve</a> (Args... args)</td></tr>
+<tr class="separator:af9cae5127b9013e7fb68dc2d6441ac23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename Ret, typename... Args&gt;<br />
-class cpst::PersistentMemoizable&lt; Ret, Args &gt;</h3>
+class cpst::Memoizable&lt; Ret, Args &gt;</h3>
 
 <p>This is an abstract class, and a class which a user wants to memoize must inherit from this class. </p>
 
-<p class="definition">Definition at line <a class="el" href="persister_8hpp_source.html#l00078">78</a> of file <a class="el" href="persister_8hpp_source.html">persister.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memoizable_8hpp_source.html#l00013">13</a> of file <a class="el" href="memoizable_8hpp_source.html">memoizable.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a65a1f63c8e975443f6762b296e6d0798"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65a1f63c8e975443f6762b296e6d0798">&#9670;&nbsp;</a></span>solve()</h2>
+<a id="af9cae5127b9013e7fb68dc2d6441ac23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9cae5127b9013e7fb68dc2d6441ac23">&#9670;&nbsp;</a></span>solve()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -100,7 +100,7 @@ template&lt;typename Ret , typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual Ret <a class="el" href="classcpst_1_1_persistent_memoizable.html">cpst::PersistentMemoizable</a>&lt; Ret, Args &gt;::solve </td>
+          <td class="memname">virtual Ret <a class="el" href="classcpst_1_1_memoizable.html">cpst::Memoizable</a>&lt; Ret, Args &gt;::solve </td>
           <td>(</td>
           <td class="paramtype">Args...&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
@@ -109,16 +109,18 @@ template&lt;typename Ret , typename... Args&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This is a user-defined solve function, which the user wants to memoize. It can be recursive (i.e. call <a class="el" href="classcpst_1_1_persistent_memoizable.html#a65a1f63c8e975443f6762b296e6d0798">solve()</a>), and these recursive calls will also be memoized. For the memoization to be accurate, this function must be pure. </p>
+<p>This is a user-defined solve function, which the user wants to memoize. It can be recursive (i.e. call <a class="el" href="classcpst_1_1_memoizable.html#af9cae5127b9013e7fb68dc2d6441ac23">solve()</a>), and these recursive calls will also be memoized. For the memoization to be accurate, this function must be pure. </p>
+
+<p class="definition">Definition at line <a class="el" href="memoizable_8hpp_source.html#l00021">21</a> of file <a class="el" href="memoizable_8hpp_source.html">memoizable.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/Users/tallal/Documents/sh/cppersist/cppersist/memoization/<a class="el" href="persister_8hpp_source.html">persister.hpp</a></li>
+<li>/Users/tallal/Documents/proto/cppersist/cppersist/memoization/<a class="el" href="memoizable_8hpp_source.html">memoizable.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -87,17 +87,21 @@ Inheritance diagram for cpst::DiskCache&lt; Ret, Args &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:adcad3f69886a64fd0a55fa097a557054"><td class="memItemLeft" align="right" valign="top"><a id="adcad3f69886a64fd0a55fa097a557054"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>DiskCache</b> (string(*<a class="el" href="classcpst_1_1_cache.html#a670f91dc553e82bd843f46347e757da6">key</a>)(Args...), string(*<a class="el" href="classcpst_1_1_cache.html#a3ad437f4b2b35d4cd652fbe936b42281">pickle</a>)(Ret), Ret(*<a class="el" href="classcpst_1_1_cache.html#ada2956a0faa3c609899eafbc529e89c1">unpickle</a>)(string), string(*hash)(string), string funcName)</td></tr>
+<tr class="separator:adcad3f69886a64fd0a55fa097a557054"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7f942b284ba7bf90bc8dc5677ff79a6"><td class="memItemLeft" align="right" valign="top"><a id="af7f942b284ba7bf90bc8dc5677ff79a6"></a>
 <a class="el" href="classcpst_1_1_disk_cache.html">DiskCache</a>&lt; Ret, Args... &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>clone</b> ()</td></tr>
 <tr class="separator:af7f942b284ba7bf90bc8dc5677ff79a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99db4ed5af6ab4847fa593454ed89c3d"><td class="memItemLeft" align="right" valign="top"><a id="a99db4ed5af6ab4847fa593454ed89c3d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DiskCache</b> (string(*<a class="el" href="classcpst_1_1_cache.html#a670f91dc553e82bd843f46347e757da6">key</a>)(Args...), string(*<a class="el" href="classcpst_1_1_cache.html#a3ad437f4b2b35d4cd652fbe936b42281">pickle</a>)(Ret), Ret(*<a class="el" href="classcpst_1_1_cache.html#ada2956a0faa3c609899eafbc529e89c1">unpickle</a>)(string), string funcName)</td></tr>
-<tr class="separator:a99db4ed5af6ab4847fa593454ed89c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e6685eaeb6e13402ab293904d3e57d4"><td class="memItemLeft" align="right" valign="top">std::optional&lt; Ret &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_disk_cache.html#a7e6685eaeb6e13402ab293904d3e57d4">get</a> (const Args &amp;... args)</td></tr>
 <tr class="separator:a7e6685eaeb6e13402ab293904d3e57d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2ead015d72f07504337624cd9edb1b8"><td class="memItemLeft" align="right" valign="top"><a id="ac2ead015d72f07504337624cd9edb1b8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>put</b> (const Args &amp;... args, const Ret &amp;value)</td></tr>
 <tr class="separator:ac2ead015d72f07504337624cd9edb1b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classcpst_1_1_per_cache"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classcpst_1_1_per_cache')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classcpst_1_1_per_cache.html">cpst::PerCache&lt; Ret, Args... &gt;</a></td></tr>
+<tr class="memitem:a4a74a05689431d9949142e39a575505c inherit pub_methods_classcpst_1_1_per_cache"><td class="memItemLeft" align="right" valign="top"><a id="a4a74a05689431d9949142e39a575505c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>PerCache</b> (string(*<a class="el" href="classcpst_1_1_cache.html#a670f91dc553e82bd843f46347e757da6">key</a>)(Args...), string(*<a class="el" href="classcpst_1_1_cache.html#a3ad437f4b2b35d4cd652fbe936b42281">pickle</a>)(Ret), Ret(*<a class="el" href="classcpst_1_1_cache.html#ada2956a0faa3c609899eafbc529e89c1">unpickle</a>)(string), string(*hash)(string))</td></tr>
+<tr class="separator:a4a74a05689431d9949142e39a575505c inherit pub_methods_classcpst_1_1_per_cache"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classcpst_1_1_cache"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classcpst_1_1_cache')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classcpst_1_1_cache.html">cpst::Cache&lt; Ret, Args... &gt;</a></td></tr>
 <tr class="memitem:a00aaa8f001ef8e233a3e7fda583f1cca inherit pub_methods_classcpst_1_1_cache"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_cache.html#a00aaa8f001ef8e233a3e7fda583f1cca">~Cache</a> ()</td></tr>
 <tr class="separator:a00aaa8f001ef8e233a3e7fda583f1cca inherit pub_methods_classcpst_1_1_cache"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,14 +125,17 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>funcName</b></
 <tr class="separator:a3ad437f4b2b35d4cd652fbe936b42281 inherit pro_attribs_classcpst_1_1_cache"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada2956a0faa3c609899eafbc529e89c1 inherit pro_attribs_classcpst_1_1_cache"><td class="memItemLeft" align="right" valign="top">Ret(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_cache.html#ada2956a0faa3c609899eafbc529e89c1">unpickle</a> )(std::string)</td></tr>
 <tr class="separator:ada2956a0faa3c609899eafbc529e89c1 inherit pro_attribs_classcpst_1_1_cache"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11fa9dc078f19409557800c34d6c29e8 inherit pro_attribs_classcpst_1_1_cache"><td class="memItemLeft" align="right" valign="top"><a id="a11fa9dc078f19409557800c34d6c29e8"></a>
+std::string(*&#160;</td><td class="memItemRight" valign="bottom"><b>hash</b> )(std::string)</td></tr>
+<tr class="separator:a11fa9dc078f19409557800c34d6c29e8 inherit pro_attribs_classcpst_1_1_cache"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename Ret, typename ... Args&gt;<br />
+<div class="textblock"><h3>template&lt;typename Ret, typename... Args&gt;<br />
 class cpst::DiskCache&lt; Ret, Args &gt;</h3>
 
 <p>This is a class that represents a persistent cache which is stored in the local filesystem. </p>
 
-<p class="definition">Definition at line <a class="el" href="diskcache_8hpp_source.html#l00013">13</a> of file <a class="el" href="diskcache_8hpp_source.html">diskcache.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="diskcache_8hpp_source.html#l00014">14</a> of file <a class="el" href="diskcache_8hpp_source.html">diskcache.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7e6685eaeb6e13402ab293904d3e57d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e6685eaeb6e13402ab293904d3e57d4">&#9670;&nbsp;</a></span>get()</h2>
@@ -136,7 +143,7 @@ class cpst::DiskCache&lt; Ret, Args &gt;</h3>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Ret , typename ... Args&gt; </div>
+template&lt;typename Ret , typename... Args&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -170,8 +177,8 @@ template&lt;typename Ret , typename ... Args&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/tallal/Documents/sh/cppersist/cppersist/cacheimpl/persistent/<a class="el" href="diskcache_8hpp_source.html">diskcache.hpp</a></li>
-<li>/Users/tallal/Documents/sh/cppersist/cppersist/cacheimpl/persistent/<a class="el" href="diskcache_8cpp_source.html">diskcache.cpp</a></li>
+<li>/Users/tallal/Documents/proto/cppersist/cppersist/cacheimpl/persistent/<a class="el" href="diskcache_8hpp_source.html">diskcache.hpp</a></li>
+<li>/Users/tallal/Documents/proto/cppersist/cppersist/cacheimpl/persistent/<a class="el" href="diskcache_8cpp_source.html">diskcache.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
