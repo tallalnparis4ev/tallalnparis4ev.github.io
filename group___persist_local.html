@@ -136,7 +136,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates an object, of type T, that has persistent memoization applied to T's solve function. Here, the storage medium for persistent memoization is the local file system. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>Creates an object that has persistent memoization applied to T's solve function. Here, the storage medium for persistent memoization is the filesystem. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>- the class which the user wants to instantiate an object of, with a memoized version of the solve function. </td></tr>
   </table>
@@ -149,6 +149,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
     <tr><td class="paramname">pickle</td><td>- this function should return a string representation for any return of the solve function. </td></tr>
     <tr><td class="paramname">unpickle</td><td>- this function is the inverse of pickle. </td></tr>
     <tr><td class="paramname">funcName</td><td>- files will be stored at "./cppersist/{funcName}", if funcName is not specified typeid(T).name() is used instead. </td></tr>
+    <tr><td class="paramname">hash</td><td>- this is applied to the key produced by the key function, the string it returns will be used as the final key for cache entries. Default = sha256. </td></tr>
   </table>
   </dd>
 </dl>
@@ -202,7 +203,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates an object, of type T, that has persistent memoization applied to T's solve function. Here, the storage medium for persistent memoization is the local file system. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>Creates an object that has persistent memoization applied to T's solve function. Here, the storage medium for persistent memoization is the filesystem. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>- the class which the user wants to instantiate an object of, with a memoized version of the solve function. </td></tr>
   </table>
@@ -214,6 +215,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
     <tr><td class="paramname">key</td><td>- this function should return a string representation for a given argument to the solve function. </td></tr>
     <tr><td class="paramname">pickle</td><td>- this function should return a string representation for any return of the solve function. </td></tr>
     <tr><td class="paramname">unpickle</td><td>- this function is the inverse of pickle. </td></tr>
+    <tr><td class="paramname">hash</td><td>- this is applied to the key produced by the key function, the string it returns will be used as the final key for cache entries. Default = sha256. </td></tr>
   </table>
   </dd>
 </dl>
@@ -267,7 +269,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates an object, of type T, that has persistent memoization applied to T's solve function. Here, the storage medium for persistent memoization is the local file system. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>Creates an object that has persistent memoization applied to T's solve function. Here, the storage medium for persistent memoization is the filesystem. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>- the class which the user wants to instantiate an object of, with a memoized version of the solve function. </td></tr>
   </table>
@@ -279,6 +281,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
     <tr><td class="paramname">pickle</td><td>- this function should return a string representation for any return of the solve function. </td></tr>
     <tr><td class="paramname">unpickle</td><td>- this function is the inverse of pickle. </td></tr>
     <tr><td class="paramname">funcName</td><td>- files will be stored at "./cppersist/{funcName}", if funcName is not specified typeid(T).name() is used instead. </td></tr>
+    <tr><td class="paramname">hash</td><td>- this is applied to the key produced by the key function, the string it returns will be used as the final key for cache entries. Default = sha256. </td></tr>
   </table>
   </dd>
 </dl>
@@ -326,7 +329,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Creates an object, of type T, that has persistent memoization applied to T's solve function. Here, the storage medium for persistent memoization is the local file system. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>Creates an object that has persistent memoization applied to T's solve function. Here, the storage medium for persistent memoization is the filesystem. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>- the class which the user wants to instantiate an object of, with a memoized version of the solve function. </td></tr>
   </table>
@@ -337,6 +340,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
     <tr><td class="paramname">key</td><td>- this function should return a string representation for a given argument to the solve function. </td></tr>
     <tr><td class="paramname">pickle</td><td>- this function should return a string representation for any return of the solve function. </td></tr>
     <tr><td class="paramname">unpickle</td><td>- this function is the inverse of pickle. </td></tr>
+    <tr><td class="paramname">hash</td><td>- this is applied to the key produced by the key function, the string it returns will be used as the final key for cache entries. Default = sha256. </td></tr>
   </table>
   </dd>
 </dl>

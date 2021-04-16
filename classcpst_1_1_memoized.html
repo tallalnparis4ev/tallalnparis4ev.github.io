@@ -99,13 +99,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad1ba99e3cdd3ea480a2a1f84c4d08fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7f78f4dc31e5cb0bb58e11e464a6337"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcpst_1_1_memoized.html">Memoized</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_memoized.html#ad7f78f4dc31e5cb0bb58e11e464a6337">operator=</a> (<a class="el" href="classcpst_1_1_memoized.html">Memoized</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="separator:ad7f78f4dc31e5cb0bb58e11e464a6337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c4a9e9a02169e3916c274198c2b46ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_memoized.html#a4c4a9e9a02169e3916c274198c2b46ef">setDecision</a> (bool(*decision_)(Args...))</td></tr>
+<tr class="separator:a4c4a9e9a02169e3916c274198c2b46ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b1c6ae39a79eeba991d50dcd15e32dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcpst_1_1_mem_cache.html">MemCache</a>&lt; Ret, Args... &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_memoized.html#a5b1c6ae39a79eeba991d50dcd15e32dc">getCache</a> ()</td></tr>
+<tr class="separator:a5b1c6ae39a79eeba991d50dcd15e32dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T, typename Ret, typename... Args&gt;<br />
 class cpst::Memoized&lt; T, Ret, Args &gt;</h3>
 
+<p>An object of this class will have its function call operator () to perform some computation, and this function has in-memory memoization applied. </p>
 
-<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00013">13</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00017">17</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8dbfb1ff94d5c40df2773b059e8db6c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8dbfb1ff94d5c40df2773b059e8db6c8">&#9670;&nbsp;</a></span>Memoized() <span class="overload">[1/3]</span></h2>
@@ -133,7 +138,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00015">15</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00019">19</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
 
 </div>
 </div>
@@ -161,8 +166,9 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Destructor </p>
 
-<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00032">32</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00040">40</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
 
 </div>
 </div>
@@ -191,8 +197,9 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Copy constructor </p>
 
-<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00034">34</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00045">45</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
 
 </div>
 </div>
@@ -221,12 +228,43 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Move constructor </p>
 
-<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00039">39</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00050">50</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5b1c6ae39a79eeba991d50dcd15e32dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b1c6ae39a79eeba991d50dcd15e32dc">&#9670;&nbsp;</a></span>getCache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Ret , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcpst_1_1_mem_cache.html">MemCache</a>&lt;Ret, Args...&gt;* <a class="el" href="classcpst_1_1_memoized.html">cpst::Memoized</a>&lt; T, Ret, Args &gt;::getCache </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the underlying <a class="el" href="classcpst_1_1_mem_cache.html">MemCache</a> object. </p>
+
+<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00079">79</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
+
+</div>
+</div>
 <a id="abd0ffbb6121d192ebe23fe80e4db7e17"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd0ffbb6121d192ebe23fe80e4db7e17">&#9670;&nbsp;</a></span>operator()()</h2>
 
@@ -253,7 +291,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00030">30</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00035">35</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
 
 </div>
 </div>
@@ -282,8 +320,9 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Copy constructor </p>
 
-<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00042">42</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00056">56</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
 
 </div>
 </div>
@@ -312,8 +351,40 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Move assignment </p>
 
-<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00048">48</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00064">64</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4c4a9e9a02169e3916c274198c2b46ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c4a9e9a02169e3916c274198c2b46ef">&#9670;&nbsp;</a></span>setDecision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Ret , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcpst_1_1_memoized.html">cpst::Memoized</a>&lt; T, Ret, Args &gt;::setDecision </td>
+          <td>(</td>
+          <td class="paramtype">bool(*)(Args...)&#160;</td>
+          <td class="paramname"><em>decision_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A method that returns a boolean indicating if this set of input arguments should be memoized or not. </p>
+
+<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00074">74</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
 
 </div>
 </div>
@@ -343,7 +414,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00016">16</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_2memoizer_8hpp_source.html#l00020">20</a> of file <a class="el" href="memory_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
 
 </div>
 </div>

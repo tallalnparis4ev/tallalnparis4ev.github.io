@@ -103,6 +103,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a93d5cf34d9e187af16694a421c28a5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abba2010bfc75d476653c3b42a39d5c28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_persistent_memoized.html#abba2010bfc75d476653c3b42a39d5c28">setMemoryCache</a> (<a class="el" href="namespacecpst.html#abc5ce8b556ff3571d34928103c332435">MemCacheType</a>, int)</td></tr>
 <tr class="separator:abba2010bfc75d476653c3b42a39d5c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91c6acdd4e6258b1d01e64695f099f53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_persistent_memoized.html#a91c6acdd4e6258b1d01e64695f099f53">setDecision</a> (bool(*decision)(Args...))</td></tr>
+<tr class="separator:a91c6acdd4e6258b1d01e64695f099f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40e6573ccb12ad58847509b21d95efb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_persistent_memoized.html#a40e6573ccb12ad58847509b21d95efb0">setCacheLoc</a> (string loc)</td></tr>
+<tr class="separator:a40e6573ccb12ad58847509b21d95efb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaec5f355e3987a758bef1f3f2972787"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcpst_1_1_cache.html">Cache</a>&lt; Ret, Args... &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_persistent_memoized.html#adaec5f355e3987a758bef1f3f2972787">getCache</a> ()</td></tr>
+<tr class="separator:adaec5f355e3987a758bef1f3f2972787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ceb34f09130244626d4de45b1b23c70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcpst_1_1_cache.html">Cache</a>&lt; Ret, Args... &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_persistent_memoized.html#a4ceb34f09130244626d4de45b1b23c70">getSecondaryCache</a> ()</td></tr>
+<tr class="separator:a4ceb34f09130244626d4de45b1b23c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77984479ef3af14a172c943805aa3f74"><td class="memItemLeft" align="right" valign="top">virtual Ret&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpst_1_1_persistent_memoized.html#a77984479ef3af14a172c943805aa3f74">solve</a> (Args... args)</td></tr>
 <tr class="separator:a77984479ef3af14a172c943805aa3f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -112,7 +120,7 @@ class cpst::PersistentMemoized&lt; T, Ret, Args &gt;</h3>
 
 <p>An object of this class will have its function call operator () to perform some computation, and this function has persistent memoization applied. </p>
 
-<p class="definition">Definition at line <a class="el" href="persistent_2memoizer_8hpp_source.html#l00018">18</a> of file <a class="el" href="persistent_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="persistent_2memoizer_8hpp_source.html#l00019">19</a> of file <a class="el" href="persistent_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af2218b0196056173cfba94b6b3fd20fd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af2218b0196056173cfba94b6b3fd20fd">&#9670;&nbsp;</a></span>PersistentMemoized() <span class="overload">[1/4]</span></h2>
@@ -142,7 +150,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00079">79</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00080">80</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
 
 </div>
 </div>
@@ -164,7 +172,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00070">70</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00071">71</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
 
 </div>
 </div>
@@ -225,11 +233,71 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
 </div><div class="memdoc">
 <p>Destructor </p>
 
-<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00063">63</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00064">64</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="adaec5f355e3987a758bef1f3f2972787"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaec5f355e3987a758bef1f3f2972787">&#9670;&nbsp;</a></span>getCache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Ret , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcpst_1_1_cache.html">Cache</a>&lt;Ret, Args...&gt;* <a class="el" href="classcpst_1_1_persistent_memoized.html">cpst::PersistentMemoized</a>&lt; T, Ret, Args &gt;::getCache </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the underlying <a class="el" href="classcpst_1_1_cache.html">Cache</a> object, if a hybrid cache is used this will be a <a class="el" href="classcpst_1_1_mem_cache.html">MemCache</a> object. Otherwise it will be a <a class="el" href="classcpst_1_1_per_cache.html">PerCache</a> object. </p>
+
+<p class="definition">Definition at line <a class="el" href="persistent_2memoizer_8hpp_source.html#l00075">75</a> of file <a class="el" href="persistent_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4ceb34f09130244626d4de45b1b23c70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ceb34f09130244626d4de45b1b23c70">&#9670;&nbsp;</a></span>getSecondaryCache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Ret , typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcpst_1_1_cache.html">Cache</a>&lt;Ret, Args...&gt;* <a class="el" href="classcpst_1_1_persistent_memoized.html">cpst::PersistentMemoized</a>&lt; T, Ret, Args &gt;::getSecondaryCache </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the underlying <a class="el" href="classcpst_1_1_cache.html">Cache</a> object, this can only be a <a class="el" href="classcpst_1_1_per_cache.html">PerCache</a> object. If a hybrid cache is not set, this function doesn't have a defined return. </p>
+
+<p class="definition">Definition at line <a class="el" href="persistent_2memoizer_8hpp_source.html#l00081">81</a> of file <a class="el" href="persistent_2memoizer_8hpp_source.html">memoizer.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a779c62c0ad02e104a3b6e3bff947ccde"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a779c62c0ad02e104a3b6e3bff947ccde">&#9670;&nbsp;</a></span>operator()()</h2>
 
@@ -248,7 +316,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00158">158</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00159">159</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
 
 </div>
 </div>
@@ -294,6 +362,52 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
 
 </div>
 </div>
+<a id="a40e6573ccb12ad58847509b21d95efb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40e6573ccb12ad58847509b21d95efb0">&#9670;&nbsp;</a></span>setCacheLoc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Ret , typename... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcpst_1_1_persistent_memoized.html">cpst::PersistentMemoized</a>&lt; T, Ret, Args &gt;::setCacheLoc </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>loc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A method to change the location of your cache. If a filesystem cache this will save entries in the directory 'loc/funcName'. If a MongoDB cache this will save entries in to the database at the URL 'loc'. </p>
+
+<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00177">177</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a91c6acdd4e6258b1d01e64695f099f53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91c6acdd4e6258b1d01e64695f099f53">&#9670;&nbsp;</a></span>setDecision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename Ret , typename... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcpst_1_1_persistent_memoized.html">cpst::PersistentMemoized</a>&lt; T, Ret, Args &gt;::setDecision </td>
+          <td>(</td>
+          <td class="paramtype">bool(*)(Args...)&#160;</td>
+          <td class="paramname"><em>decision</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A method that returns a boolean indicating if this set of input arguments should be memoized or not. </p>
+
+<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00171">171</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a93d5cf34d9e187af16694a421c28a5f1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a93d5cf34d9e187af16694a421c28a5f1">&#9670;&nbsp;</a></span>setMemoryCache() <span class="overload">[1/2]</span></h2>
 
@@ -313,7 +427,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
 </div><div class="memdoc">
 <p>A method to change/assign a memory cache </p>
 
-<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00022">22</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00023">23</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
 
 </div>
 </div>
@@ -346,7 +460,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
 </div><div class="memdoc">
 <p>A method to change/assign a memory cache, followed by the size of the cache. The size is only applicable if the MemCacheType is LRU or REGULAR. The size will determine the maximum number of entries in the LRU or REGULAR. </p>
 
-<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00027">27</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00028">28</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
 
 </div>
 </div>
@@ -376,7 +490,7 @@ template&lt;typename T , typename Ret , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00170">170</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memoizer_8cpp_source.html#l00186">186</a> of file <a class="el" href="memoizer_8cpp_source.html">memoizer.cpp</a>.</p>
 
 </div>
 </div>

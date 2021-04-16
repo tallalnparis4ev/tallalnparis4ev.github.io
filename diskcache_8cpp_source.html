@@ -81,7 +81,7 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using</span> std::string;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecpst.html">cpst</a> {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> DiskCache&lt;Ret, Args...&gt;::OUT_DIR = <span class="stringliteral">&quot;persist&quot;</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> DiskCache&lt;Ret, Args...&gt;::DEFAULT_PATH = <span class="stringliteral">&quot;./persist/&quot;</span>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classcpst_1_1_disk_cache.html#af7f942b284ba7bf90bc8dc5677ff79a6">   16</a></span>&#160;<a class="code" href="classcpst_1_1_disk_cache.html">DiskCache</a>&lt;Ret, Args...&gt;* <a class="code" href="classcpst_1_1_disk_cache.html#af7f942b284ba7bf90bc8dc5677ff79a6">DiskCache&lt;Ret, Args...&gt;::clone</a>() {</div>
@@ -96,44 +96,54 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                   <span class="keywordtype">string</span> (*hash)(<span class="keywordtype">string</span>), <span class="keywordtype">string</span> funcName)</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    : <a class="code" href="classcpst_1_1_disk_cache.html">DiskCache</a>(key, pickle, unpickle, hash) {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  this-&gt;funcName = <a class="code" href="classcpst_1_1_per_cache.html#a1e7532263426230bb38035570d950a43">funcName</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  std::filesystem::create_directories(OUT_DIR + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="classcpst_1_1_per_cache.html#a1e7532263426230bb38035570d950a43">funcName</a>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  this-&gt;outputPath = <span class="stringliteral">&quot;./&quot;</span> + OUT_DIR + <span class="stringliteral">&quot;/&quot;</span> + <a class="code" href="classcpst_1_1_per_cache.html#a1e7532263426230bb38035570d950a43">funcName</a> + <span class="stringliteral">&quot;/&quot;</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">string</span> <a class="code" href="classcpst_1_1_disk_cache.html">DiskCache&lt;Ret, Args...&gt;::makePathForKey</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; key) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">return</span> this-&gt;outputPath + this-&gt;hash(key) + <span class="stringliteral">&quot;.out&quot;</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classcpst_1_1_disk_cache.html#a7e6685eaeb6e13402ab293904d3e57d4">   38</a></span>&#160;std::optional&lt;Ret&gt; <a class="code" href="classcpst_1_1_disk_cache.html#a7e6685eaeb6e13402ab293904d3e57d4">DiskCache&lt;Ret, Args...&gt;::get</a>(<span class="keyword">const</span> Args&amp;... args) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  std::ifstream inFile(makePathForKey(this-&gt;key(args...)));</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">if</span> (!inFile) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="namespacecpst.html#a8d94e8647d1c08c5b7d8bafcb21ac573">logOne</a>(<span class="stringliteral">&quot;Unable to open file&quot;</span>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> nullopt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  std::ostringstream ss;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  ss &lt;&lt; inFile.rdbuf();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">string</span> str = ss.str();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  inFile.close();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">return</span> optional&lt;Ret&gt;{this-&gt;unpickle(str)};</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classcpst_1_1_disk_cache.html#ac2ead015d72f07504337624cd9edb1b8">   52</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classcpst_1_1_disk_cache.html#ac2ead015d72f07504337624cd9edb1b8">DiskCache&lt;Ret, Args...&gt;::put</a>(<span class="keyword">const</span> Args&amp;... args, <span class="keyword">const</span> Ret&amp; value) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  std::ofstream myfile(makePathForKey(this-&gt;key(args...)));</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  myfile &lt;&lt; this-&gt;pickle(value);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  myfile.close();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}  <span class="comment">// namespace cpst</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  this-&gt;outputPath = DEFAULT_PATH + <a class="code" href="classcpst_1_1_per_cache.html#a1e7532263426230bb38035570d950a43">funcName</a> + <span class="stringliteral">&quot;/&quot;</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  std::filesystem::create_directories(</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      this-&gt;outputPath);  <span class="comment">// create directory just in case user hasn&#39;t</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">string</span> <a class="code" href="classcpst_1_1_disk_cache.html">DiskCache&lt;Ret, Args...&gt;::makePathForKey</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; key) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">return</span> this-&gt;outputPath + this-&gt;hash(key) + <span class="stringliteral">&quot;.out&quot;</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classcpst_1_1_disk_cache.html#a7e6685eaeb6e13402ab293904d3e57d4">   39</a></span>&#160;std::optional&lt;Ret&gt; <a class="code" href="classcpst_1_1_disk_cache.html#a7e6685eaeb6e13402ab293904d3e57d4">DiskCache&lt;Ret, Args...&gt;::get</a>(<span class="keyword">const</span> Args&amp;... args) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  std::ifstream inFile(</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      makePathForKey(this-&gt;key(args...)));  <span class="comment">// attempt to read entry</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">if</span> (!inFile) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="namespacecpst.html#a8d94e8647d1c08c5b7d8bafcb21ac573">logOne</a>(<span class="stringliteral">&quot;Unable to open file&quot;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> nullopt;  <span class="comment">// cache miss</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  std::ostringstream ss;  <span class="comment">// cache hit</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  ss &lt;&lt; inFile.rdbuf();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">string</span> str = ss.str();  <span class="comment">// read the file&#39;s content</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  inFile.close();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">return</span> optional&lt;Ret&gt;{this-&gt;unpickle(str)};  <span class="comment">// deserialize</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classcpst_1_1_disk_cache.html#ac2ead015d72f07504337624cd9edb1b8">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classcpst_1_1_disk_cache.html#ac2ead015d72f07504337624cd9edb1b8">DiskCache&lt;Ret, Args...&gt;::put</a>(<span class="keyword">const</span> Args&amp;... args, <span class="keyword">const</span> Ret&amp; value) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  std::ofstream myfile(makePathForKey(this-&gt;key(args...)));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  myfile &lt;&lt; this-&gt;pickle(value);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  myfile.close();  <span class="comment">// write and close entry</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classcpst_1_1_disk_cache.html#afda69fc9167fea8efe52f1745ffeb1bd">   61</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classcpst_1_1_disk_cache.html#afda69fc9167fea8efe52f1745ffeb1bd">DiskCache&lt;Ret, Args...&gt;::setLoc</a>(<span class="keywordtype">string</span>&amp; loc) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  this-&gt;outputPath = loc + <span class="stringliteral">&quot;/&quot;</span> + this-&gt;funcName + <span class="stringliteral">&quot;/&quot;</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  std::filesystem::create_directories(</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      this-&gt;outputPath);  <span class="comment">// create directory just in case user hasn&#39;t</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}  <span class="comment">// namespace cpst</span></div>
 <div class="ttc" id="aclasscpst_1_1_disk_cache_html"><div class="ttname"><a href="classcpst_1_1_disk_cache.html">cpst::DiskCache</a></div><div class="ttdef"><b>Definition:</b> <a href="diskcache_8hpp_source.html#l00014">diskcache.hpp:14</a></div></div>
-<div class="ttc" id="aclasscpst_1_1_disk_cache_html_a7e6685eaeb6e13402ab293904d3e57d4"><div class="ttname"><a href="classcpst_1_1_disk_cache.html#a7e6685eaeb6e13402ab293904d3e57d4">cpst::DiskCache::get</a></div><div class="ttdeci">std::optional&lt; Ret &gt; get(const Args &amp;... args)</div><div class="ttdef"><b>Definition:</b> <a href="diskcache_8cpp_source.html#l00038">diskcache.cpp:38</a></div></div>
-<div class="ttc" id="aclasscpst_1_1_disk_cache_html_ac2ead015d72f07504337624cd9edb1b8"><div class="ttname"><a href="classcpst_1_1_disk_cache.html#ac2ead015d72f07504337624cd9edb1b8">cpst::DiskCache::put</a></div><div class="ttdeci">void put(const Args &amp;... args, const Ret &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="diskcache_8cpp_source.html#l00052">diskcache.cpp:52</a></div></div>
+<div class="ttc" id="aclasscpst_1_1_disk_cache_html_a7e6685eaeb6e13402ab293904d3e57d4"><div class="ttname"><a href="classcpst_1_1_disk_cache.html#a7e6685eaeb6e13402ab293904d3e57d4">cpst::DiskCache::get</a></div><div class="ttdeci">std::optional&lt; Ret &gt; get(const Args &amp;... args)</div><div class="ttdef"><b>Definition:</b> <a href="diskcache_8cpp_source.html#l00039">diskcache.cpp:39</a></div></div>
+<div class="ttc" id="aclasscpst_1_1_disk_cache_html_ac2ead015d72f07504337624cd9edb1b8"><div class="ttname"><a href="classcpst_1_1_disk_cache.html#ac2ead015d72f07504337624cd9edb1b8">cpst::DiskCache::put</a></div><div class="ttdeci">void put(const Args &amp;... args, const Ret &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="diskcache_8cpp_source.html#l00054">diskcache.cpp:54</a></div></div>
 <div class="ttc" id="aclasscpst_1_1_disk_cache_html_adcad3f69886a64fd0a55fa097a557054"><div class="ttname"><a href="classcpst_1_1_disk_cache.html#adcad3f69886a64fd0a55fa097a557054">cpst::DiskCache::DiskCache</a></div><div class="ttdeci">DiskCache(string(*key)(Args...), string(*pickle)(Ret), Ret(*unpickle)(string), string(*hash)(string), string funcName)</div><div class="ttdef"><b>Definition:</b> <a href="diskcache_8cpp_source.html#l00022">diskcache.cpp:22</a></div></div>
 <div class="ttc" id="aclasscpst_1_1_disk_cache_html_af7f942b284ba7bf90bc8dc5677ff79a6"><div class="ttname"><a href="classcpst_1_1_disk_cache.html#af7f942b284ba7bf90bc8dc5677ff79a6">cpst::DiskCache::clone</a></div><div class="ttdeci">DiskCache&lt; Ret, Args... &gt; * clone()</div><div class="ttdef"><b>Definition:</b> <a href="diskcache_8cpp_source.html#l00016">diskcache.cpp:16</a></div></div>
-<div class="ttc" id="aclasscpst_1_1_per_cache_html_a1e7532263426230bb38035570d950a43"><div class="ttname"><a href="classcpst_1_1_per_cache.html#a1e7532263426230bb38035570d950a43">cpst::PerCache&lt; Ret, Args... &gt;::funcName</a></div><div class="ttdeci">std::string funcName</div><div class="ttdef"><b>Definition:</b> <a href="percache_8hpp_source.html#l00021">percache.hpp:21</a></div></div>
+<div class="ttc" id="aclasscpst_1_1_disk_cache_html_afda69fc9167fea8efe52f1745ffeb1bd"><div class="ttname"><a href="classcpst_1_1_disk_cache.html#afda69fc9167fea8efe52f1745ffeb1bd">cpst::DiskCache::setLoc</a></div><div class="ttdeci">void setLoc(string &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="diskcache_8cpp_source.html#l00061">diskcache.cpp:61</a></div></div>
+<div class="ttc" id="aclasscpst_1_1_per_cache_html_a1e7532263426230bb38035570d950a43"><div class="ttname"><a href="classcpst_1_1_per_cache.html#a1e7532263426230bb38035570d950a43">cpst::PerCache&lt; Ret, Args... &gt;::funcName</a></div><div class="ttdeci">std::string funcName</div><div class="ttdef"><b>Definition:</b> <a href="percache_8hpp_source.html#l00022">percache.hpp:22</a></div></div>
 <div class="ttc" id="anamespacecpst_html"><div class="ttname"><a href="namespacecpst.html">cpst</a></div><div class="ttdef"><b>Definition:</b> <a href="lrucache_8cpp_source.html#l00010">lrucache.cpp:10</a></div></div>
-<div class="ttc" id="anamespacecpst_html_a8d94e8647d1c08c5b7d8bafcb21ac573"><div class="ttname"><a href="namespacecpst.html#a8d94e8647d1c08c5b7d8bafcb21ac573">cpst::logOne</a></div><div class="ttdeci">void logOne(Single singleValue)</div><div class="ttdef"><b>Definition:</b> <a href="log_8hpp_source.html#l00029">log.hpp:29</a></div></div>
+<div class="ttc" id="anamespacecpst_html_a8d94e8647d1c08c5b7d8bafcb21ac573"><div class="ttname"><a href="namespacecpst.html#a8d94e8647d1c08c5b7d8bafcb21ac573">cpst::logOne</a></div><div class="ttdeci">void logOne(Single singleValue)</div><div class="ttdef"><b>Definition:</b> <a href="log_8hpp_source.html#l00030">log.hpp:30</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

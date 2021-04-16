@@ -102,6 +102,10 @@ $(function() {
 , <a class="el" href="classcpst_1_1_one_cache.html#a0f88598b987735c25e381ac1a6a24c17">cpst::OneCache&lt; Ret, Args &gt;</a>
 , <a class="el" href="classcpst_1_1_reg_cache.html#af350bd1e80393516d6c05a5090b281f7">cpst::RegCache&lt; Ret, Args &gt;</a>
 </li>
+<li>getCache()
+: <a class="el" href="classcpst_1_1_memoized.html#a5b1c6ae39a79eeba991d50dcd15e32dc">cpst::Memoized&lt; T, Ret, Args &gt;</a>
+, <a class="el" href="classcpst_1_1_persistent_memoized.html#adaec5f355e3987a758bef1f3f2972787">cpst::PersistentMemoized&lt; T, Ret, Args &gt;</a>
+</li>
 <li>getFromCache()
 : <a class="el" href="classcpst_1_1_mem_cache.html#acee6e0a54d59f351b99ded8697c71bf0">cpst::MemCache&lt; Ret, Args &gt;</a>
 </li>
@@ -110,6 +114,9 @@ $(function() {
 </li>
 <li>getPickle()
 : <a class="el" href="classcpst_1_1_cache.html#a7af2f9c0ca66c186e7a0b59069f2a762">cpst::Cache&lt; Ret, Args &gt;</a>
+</li>
+<li>getSecondaryCache()
+: <a class="el" href="classcpst_1_1_persistent_memoized.html#a4ceb34f09130244626d4de45b1b23c70">cpst::PersistentMemoized&lt; T, Ret, Args &gt;</a>
 </li>
 <li>getUnpickle()
 : <a class="el" href="classcpst_1_1_cache.html#a1199df990eb3b8cd410e2e286250a35e">cpst::Cache&lt; Ret, Args &gt;</a>
@@ -195,6 +202,18 @@ $(function() {
 
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>setCacheLoc()
+: <a class="el" href="classcpst_1_1_persistent_memoized.html#a40e6573ccb12ad58847509b21d95efb0">cpst::PersistentMemoized&lt; T, Ret, Args &gt;</a>
+</li>
+<li>setDecision()
+: <a class="el" href="classcpst_1_1_memoized.html#a4c4a9e9a02169e3916c274198c2b46ef">cpst::Memoized&lt; T, Ret, Args &gt;</a>
+, <a class="el" href="classcpst_1_1_persistent_memoized.html#a91c6acdd4e6258b1d01e64695f099f53">cpst::PersistentMemoized&lt; T, Ret, Args &gt;</a>
+</li>
+<li>setLoc()
+: <a class="el" href="classcpst_1_1_disk_cache.html#afda69fc9167fea8efe52f1745ffeb1bd">cpst::DiskCache&lt; Ret, Args &gt;</a>
+, <a class="el" href="classcpst_1_1_mongo_d_b_cache.html#a20ce8b4f12f485caddd1737cbf17c139">cpst::MongoDBCache&lt; Ret, Args &gt;</a>
+, <a class="el" href="classcpst_1_1_per_cache.html#a2c322fd7466ff83c974b01577373e1d7">cpst::PerCache&lt; Ret, Args &gt;</a>
+</li>
 <li>setMemoryCache()
 : <a class="el" href="classcpst_1_1_persistent_memoized.html#a93d5cf34d9e187af16694a421c28a5f1">cpst::PersistentMemoized&lt; T, Ret, Args &gt;</a>
 </li>
