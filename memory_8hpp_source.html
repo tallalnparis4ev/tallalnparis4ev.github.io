@@ -100,16 +100,16 @@ $(function() {
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keyword">new</span> <a class="code" href="classcpst_1_1_reg_cache.html">RegCache</a>&lt;Ret, Args...&gt;(size, key, pickle, unpickle));</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="group___memo_memory.html#ga7c22079362ab15121f37bd2f18261249">   69</a></span>&#160;<a class="code" href="classcpst_1_1_memoized.html">Memoized</a>&lt;T, Ret, Args...&gt; <a class="code" href="group___memo_memory.html#gaf3413d980de7759c421d8c4b47a2809e">getMemoizedObj</a>(std::string (*key)(Args...),</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                         std::string (*pickle)(Ret),</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                         Ret (*unpickle)(std::string),</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                         <span class="keywordtype">int</span> size) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group___memo_memory.html#gaf3413d980de7759c421d8c4b47a2809e">getMemoizedObj</a>&lt;T, Ret, Args...&gt;(key, pickle, unpickle,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                         <a class="code" href="namespacecpst.html#abc5ce8b556ff3571d34928103c332435a820ead78f0fa32544c7ba38fe7ff53d9">MemCacheType::REGULAR</a>, size);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}  <span class="comment">// namespace cpst</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Ret, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="group___memo_memory.html#ga7c22079362ab15121f37bd2f18261249">   68</a></span>&#160;<a class="code" href="classcpst_1_1_memoized.html">Memoized</a>&lt;T, Ret, Args...&gt; <a class="code" href="group___memo_memory.html#gaf3413d980de7759c421d8c4b47a2809e">getMemoizedObj</a>(std::string (*key)(Args...),</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                         std::string (*pickle)(Ret),</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                         Ret (*unpickle)(std::string),</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                         <span class="keywordtype">int</span> size) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group___memo_memory.html#gaf3413d980de7759c421d8c4b47a2809e">getMemoizedObj</a>&lt;T, Ret, Args...&gt;(key, pickle, unpickle,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                         <a class="code" href="namespacecpst.html#abc5ce8b556ff3571d34928103c332435a820ead78f0fa32544c7ba38fe7ff53d9">MemCacheType::REGULAR</a>, size);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}  <span class="comment">// namespace cpst</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclasscpst_1_1_l_r_u_cache_html"><div class="ttname"><a href="classcpst_1_1_l_r_u_cache.html">cpst::LRUCache</a></div><div class="ttdef"><b>Definition:</b> <a href="lrucache_8hpp_source.html#l00020">lrucache.hpp:20</a></div></div>
 <div class="ttc" id="aclasscpst_1_1_memoizable_html"><div class="ttname"><a href="classcpst_1_1_memoizable.html">cpst::Memoizable</a></div><div class="ttdef"><b>Definition:</b> <a href="memoizable_8hpp_source.html#l00027">memoizable.hpp:27</a></div></div>
 <div class="ttc" id="aclasscpst_1_1_memoized_html"><div class="ttname"><a href="classcpst_1_1_memoized.html">cpst::Memoized</a></div><div class="ttdef"><b>Definition:</b> <a href="memory_2memoizer_8hpp_source.html#l00017">memoizer.hpp:17</a></div></div>
